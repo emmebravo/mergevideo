@@ -1,0 +1,53 @@
+{
+  "videos": [{
+      "id": "25ff984c-e79d-460c-a75f-489e58425656",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/astronaut-in-suit-closing-container-underwater.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/astronaut-in-suit-closing-container-underwater.jpg"
+    },
+    {
+      "id": "67a702b9-1787-4c4b-bee2-b391806b803d",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/camera-positioned-on-rocket-during-take-off.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/camera-positioned-on-rocket-during-take-off.jpg"
+    },
+    {
+      "id": "bd32bd3a-0b45-4170-8529-c7361886d2de",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/creepy-winter-timelapse-of-the-night-sky-and-barren-tree.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/creepy-winter-timelapse-of-the-night-sky-and-barren-tree.jpg"
+    },
+    {
+      "id": "fdbe3789-e4e6-4f49-8cc0-beeea75a21e0",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/midsection-footage-of-worker-of-bakery-section-giving-fresh-bread-to-customer.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/midsection-footage-of-worker-of-bakery-section-giving-fresh-bread-to-customer.jpg"
+    },
+    {
+      "id": "e8e49b90-21b6-475f-b53f-2f8df62d9be3",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/racecars-on-indy-speedway.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/racecars-on-indy-speedway.jpg"
+    },
+    {
+      "id": "ded0abbe-14e1-444c-aaaa-70615b6d0c72",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/shepherd-herding-sheep-in-the-himalayas.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/shepherd-herding-sheep-in-the-himalayas.jpg"
+    },
+    {
+      "id": "1577bcde-c165-4634-b27d-3123a342a3f3",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/short-timelapse-of-night-traffic-and-palm-trees-in-palm-beach.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/short-timelapse-of-night-traffic-and-palm-trees-in-palm-beach.jpg"
+    },
+    {
+      "id": "d584c1b8-6c87-432c-a14c-db14577e5408",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/skier-covers-camera-in-snow-with-a-hockey-stop.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/skier-covers-camera-in-snow-with-a-hockey-stop.jpg"
+    },
+    {
+      "id": "102b420c-93b7-463b-b9ee-af9a138fc2e1",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/spices-in-a-market-in-morocco-at-night.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/spices-in-a-market-in-morocco-at-night.jpg"
+    },
+    {
+      "id": "49eba7ee-019f-407b-86e0-399012c77c13",
+      "source": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/street-food-at-the-market-vietnam-dalat.mp4",
+      "poster": "https://video-fuse-footage.s3.us-east-1.amazonaws.com/street-food-at-the-market-vietnam-dalat.jpg"
+    }
+  ]
+}
