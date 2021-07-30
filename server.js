@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5000;
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const ffmpeg = require('fluent-ffmpeg');
 const { randomUUID } = require('crypto');
 
 // list and stuff for ffmpeg
@@ -16,38 +17,32 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //create an obj to hold ids and video?
+const sourceObj = {}; // use hashmap to have IDs: URLs
 
 //read contents of db.json
-const sourceObject = {}; // possibly use, possibly not; don't know yet
 fs.readFile('./db.json', (error, data) => {
   if (error) throw error;
   //JSON object holding the IDs, video src, and img src
   let { videos } = JSON.parse(data);
   for (let i = 0; i < videos.length; i++) {
-    console.log(`${videos[i].id}: ${videos[i].source}`);
-    //create a hash map of this info? IDK :()
+    const videoId = videos[i].id;
+    if (!(videoId in sourceObj)) {
+      sourceObj[videoId] = videos[i].src;
+    }
   }
+  console.log(`the object is: \n ${sourceObj}`);
 });
 
 // @POST Route
 app.post('/video/fused', (request, response) => {
   const arrayVideoIds = request.body;
-
-  arrayVideoIds.forEach((videoId) => {
-    // when videoId sent from client matches the one in db, download video
-    if (videoId === videos[i].id) {
-      videosURL += videos[i].source;
-      videosURL = '';
-      downloadVideo();
-    }
-  });
 });
 
 //download the videos to fuse
 let videosURL = ``;
 const fileName = path.basename(videosURL);
 
-function downloadVideo(videosURL, callback) {
+function downloadVideo(videosURL) {
   https.get(videosURL, (response) => {
     const path = `${__dirname}/downloads/${fileName}`;
     const filePath = fs.createWriteStream(path);
