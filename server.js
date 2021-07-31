@@ -2,33 +2,28 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// @POST Route
-app.post('/video/fused', async (request, response) => {
-  const arrayVideoIds = [
-    '25ff984c-e79d-460c-a75f-489e58425656',
-    '67a702b9-1787-4c4b-bee2-b391806b803d',
-  ];
-  //request.body;
-
-  for (let i = 0; i < arrayVideoIds.length; i++) {
-    id += arrayVideoIds[i];
-  }
-
-  //const response = await {};
-});
-
-//download the videos to fuse
 let id = '';
 let url = '';
 
-//read contents of db.json
+// @POST Route
+//app.post('/video/fused', async (request, response) => {
+const arrayVideoIds = request.body;
+
+for (let i = 0; i < arrayVideoIds.length; i++) {
+  id += arrayVideoIds[i];
+}
+
+//const response = await {};
+//});
+
+//read contents of db.json + retrieve vid src based off id
 function retrieveVidSource() {
   fs.readFile('./db.json', (error, data) => {
     if (error) throw error;
@@ -42,6 +37,7 @@ function retrieveVidSource() {
     }
   });
 }
+retrieveVidSource(id);
 
 async function downloadVideo() {
   const response = await axios({
@@ -57,6 +53,28 @@ async function downloadVideo() {
   });
 }
 downloadVideo(url);
+
+let videoNames = [];
+
+// read directory for filenames
+fs.readdir(__dirname, (err, files) => {
+  if (err) console.log(err);
+  else {
+    console.log('\nCurrent directory filenames:');
+    files.map((file) => {
+      if (path.extname(file) === '.mp4') {
+        videoNames.push(file);
+      }
+    });
+  }
+  console.log(videoNames);
+});
+
+const proc = new ffmpeg(videoNames[0])
+  .mergeAdd(videoNames[1])
+  .mergeToFile(`./${Date.now()}out.mp4`, function () {
+    console.log('files has been merged succesfully');
+  });
 
 // @GET Route
 app.get('/video/fused/:id', (request, response) => {
