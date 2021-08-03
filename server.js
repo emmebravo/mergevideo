@@ -105,5 +105,3 @@ app.get('/video/fused/:id', (request, response) => {
 app.listen(PORT, () => {
   console.log(`your ${PORT} server is running...`);
 });
-
-module.exports = app;

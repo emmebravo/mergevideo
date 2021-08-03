@@ -6,7 +6,10 @@ To run the code:
 
 - Clone the repo
 - Run `npm install`
-- Open `server.test.js` inside `test` folder
+- Install `ffmpeg` via their download link or through `homebrew`
+  - ```bash
+    $ brew install ffmpeg
+    ```
 
 ### Tasks
 
@@ -19,7 +22,7 @@ To run the code:
     - Opening `http://localhost:<port>/video/{id}` in a web browser should load the video.
 - [ ] Add at least one automated test.
 - [ ] Add instructions on how to run the API locally.
-- [ ] Provide an explantion for what you would do to make the site production ready.
+- [ ] Provide an explanation for what you would do to make the site production ready.
 
 #### Sample Requests/Responses
 
