@@ -6,77 +6,36 @@ To run the code:
 
 - Clone the repo
 - Run `npm install`
-- Install `ffmpeg` via their [https://ffmpeg.org/download.html](download link) or through `homebrew`
+- Install `ffmpeg` via their [download link](https://ffmpeg.org/download.html) or through `homebrew`
 
 ```bash
 $ brew install ffmpeg
 ```
 
-### Tasks
+- `PORT` is set to `5000`
 
-- [ ] Create an API using Node.js and a framework of your choosing, implementing the following routes:
-  - [ ] `POST /video/fused`
-    - Create fused video based on the body param, which is an array of `{id}`s to fuse, and store the video on the local file system. You can find the corresponding video for an `{id}` in [db.json](./db.json).
-    - Return `id` of newly fused video. It should be a randomly generated UUID.
-  - [ ] `GET /video/fused/{id}`
-    - Return binary data of fused video with id `{id}` (this id is generated in `POST /video`).
-    - Opening `http://localhost:<port>/video/{id}` in a web browser should load the video.
-- [ ] Add at least one automated test.
-- [ ] Add instructions on how to run the API locally.
-- [ ] Provide an explanation for what you would do to make the site production ready.
+### Sample POST Request/Response
 
-#### Sample Requests/Responses
-
-> `POST /video/fused`
-
-Sample Request
+- From the [db.json](db.json) you can choose two, or more, `{id}`s to pass as an array in a POST request
+- In MacOS, curl is already installed, just run the following code in the CLI--make sure you're server is running, preferably through your IDE
 
 ```
-curl \
-  --request POST \
-  --header "Content-Type: application/json" \
-  --data '["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]'\
-  http://localhost:<port>/video/fused
+curl -v -d "data=["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]" http://localhost:5000/video/fused
 ```
 
-Sample Response
+- in curl, `-d` means data. For more in what they mean, visit [cURL](https://curl.haxx.se/docs/manpage.html)
+- You'll receive a `uuid` as a response, which you'll need to make a GET Request
 
 ```
-"c4007ff6-514d-46c7-86ae-313748888422"
+d080003e-6041-41d6-8981-3236700c81ef
 ```
 
-> `GET /video/fused/{id}`
+#### Sample GET Request
 
-Sample Request
-
-```
-curl http://localhost:<port>/video/fused/c4007ff6-514d-46c7-86ae-313748888422 --output -
-```
-
-Sample Response
+- Run the following code in your CLI
 
 ```
-<binary data>
+curl http://localhost:5000/video/fused/d080003e-6041-41d6-8981-3236700c81ef --output -
 ```
 
-### Evaluation Criteria
-
-- API implemented and working as expected.
-- Code is written in a clean, modern, and maintainable way.
-- Sufficient documentation provided for running the site locally.
-- Well-thought-out answer for explaining how to make the site production ready.
-
-### Additional Information
-
-- We recommend using FFmpeg, specifically the [fluent-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg) library to fuse videos together.
-- Feel free to start your project from scratch or use boilerplate code.
-- Think of this project as a proof of concept that you want to build in one evening to get fast feedback. We are not expecting this code to be production ready, because that would require too much time. Your explanation for how you would make the code production ready will help fill that gap.
-- If you have any questions or need further clarification, please reach out to dom@cquence.app
-
-### Code Submission
-
-Please organize, design, test and document your code for evaluation - then push your changes to a new branch and create a PR. Please let us know when your code is ready to review.
-
-Good luck!  
-_The Cquence Team_  
-dom@cquence.app
+- You'll receive back binary data.
