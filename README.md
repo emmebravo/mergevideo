@@ -6,7 +6,7 @@ To run the code:
 
 - Clone the repo
 - Run `npm install`
-- Install `ffmpeg` via their download link or through `homebrew`
+- Install `ffmpeg` via their [https://ffmpeg.org/download.html](download link) or through `homebrew`
 
 ```bash
 $ brew install ffmpeg
