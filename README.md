@@ -1,15 +1,12 @@
 ## Cquence Back-End Coding Challenge (Video Fuse)
 
-### Description
+### Run API Locally
 
-A friend of yours has an idea for a new video editing app, and they need your help building out the back-end! The eventual goal is to allow users to search for videos based on objects that appear in the video, trim those videos into clips, and then fuse those clips into a new video. Getting early and fast feedback is crucial, so the first version of the app will be _greatly_ simplified. Your goal is to implement the first version of the Video Fuse API that will fuse videos together and send the result back to the client.
+To run the code:
 
-The steps below help explain the interactions between the client and API:
-
-1. Client displays source videos to the user.
-2. User selects source videos to fuse, and then the client sends those video IDs to the API to create a newly fused video.
-3. API creates the fused video and sends the ID for that newly fused video back to the client.
-4. Client loads the newly fused video via ID.
+- Clone the repo
+- Run `npm install`
+- Open `server.test.js` inside `test` folder
 
 ### Tasks
 
@@ -29,6 +26,7 @@ The steps below help explain the interactions between the client and API:
 > `POST /video/fused`
 
 Sample Request
+
 ```
 curl \
   --request POST \
@@ -36,7 +34,9 @@ curl \
   --data '["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]'\
   http://localhost:<port>/video/fused
 ```
+
 Sample Response
+
 ```
 "c4007ff6-514d-46c7-86ae-313748888422"
 ```
@@ -44,10 +44,13 @@ Sample Response
 > `GET /video/fused/{id}`
 
 Sample Request
+
 ```
 curl http://localhost:<port>/video/fused/c4007ff6-514d-46c7-86ae-313748888422 --output -
 ```
+
 Sample Response
+
 ```
 <binary data>
 ```
