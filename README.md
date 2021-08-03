@@ -17,13 +17,13 @@ $ brew install ffmpeg
 ### Sample POST Request/Response
 
 - From the [db.json](db.json) you can choose two, or more, `{id}`s to pass as an array in a POST request
-- In MacOS, curl is already installed, just run the following code in the CLI--make sure you're server is running, preferably through your IDE
+- You can use cURL or Postman to run API
+  - in curl, `-d` means data. For more in what they mean, visit [cURL](https://curl.haxx.se/docs/manpage.html)
 
 ```
 curl -v -d "data=["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]" http://localhost:5000/video/fused
 ```
 
-- in curl, `-d` means data. For more in what they mean, visit [cURL](https://curl.haxx.se/docs/manpage.html)
 - You'll receive a `uuid` as a response, which you'll need to make a GET Request
 
 ```
