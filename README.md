@@ -1,5 +1,7 @@
 ## Cquence Back-End Coding Challenge (Video Fuse)
 
+The instructions for this take home are in [instructions.md](instructions)
+
 ### Run API Locally
 
 To run the code:
@@ -21,7 +23,7 @@ $ brew install ffmpeg
   - in curl, `-d` means data. For more in what they mean, visit [cURL](https://curl.haxx.se/docs/manpage.html)
 
 ```
-curl -v -d "data=["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]" http://localhost:5000/video/fused
+curl -d "data=["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]" http://localhost:5000/video/fused
 ```
 
 - You'll receive a `uuid` as a response, which you'll need to make a GET Request
