@@ -1,4 +1,4 @@
-## Cquence Back-End Coding Challenge (Video Fuse)
+## Back-End Coding Challenge (Video Fuse)
 
 ### Description
 
@@ -30,11 +30,7 @@ The steps below help explain the interactions between the client and API:
 > Sample Request
 
 ```
-curl \
-  --request POST \
-  --header "Content-Type: application/json" \
-  --data '["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]'\
-  http://localhost:<port>/video/fused
+curl -d "data=["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]" http://localhost:5000/video/fused
 ```
 
 Sample Response
@@ -47,7 +43,7 @@ Sample Response
 > Sample Request
 
 ```
-curl http://localhost:<port>/video/fused/c4007ff6-514d-46c7-86ae-313748888422 --output -
+curl http://localhost:5000/video/fused/d080003e-6041-41d6-8981-3236700c81ef --output -
 ```
 
 Sample Response
