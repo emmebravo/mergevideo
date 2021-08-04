@@ -1,4 +1,4 @@
-## Cquence Back-End Coding Challenge (Video Fuse)
+## Back-End Coding Challenge (Video Fuse)
 
 The instructions for this take home are in [instructions.md](instructions)
 
