@@ -95,7 +95,7 @@ app.get('/video/fused/:id', (request, response) => {
   const fileName = `${mergedVideoId}.mp4`;
   response.sendFile(fileName, options, (error) => {
     if (error) {
-      next(error);
+      console.log(error);
     } else {
       console.log('Sent: ', mergedVideoId);
     }
