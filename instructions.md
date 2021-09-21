@@ -1,4 +1,4 @@
-## Back-End Coding Challenge (Video Fuse)
+## Back-End Video Fuse
 
 ### Description
 
@@ -51,14 +51,3 @@ Sample Response
 ```
 <binary data>
 ```
-
-### Evaluation Criteria
-
-- API implemented and working as expected.
-- Code is written in a clean, modern, and maintainable way.
-- Sufficient documentation provided for running the site locally.
-
-### Additional Information
-
-- We recommend using FFmpeg, specifically the [fluent-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg) library to fuse videos together.
-- Feel free to start your project from scratch or use boilerplate code.
