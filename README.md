@@ -1,4 +1,4 @@
-## Back-End Coding Challenge (Video Fuse)
+## Back-End Video Fuse
 
 The instructions for this take home are in [instructions.md](instructions)
 
@@ -20,13 +20,13 @@ $ brew install ffmpeg
 
 - From the [db.json](db.json) you can choose two, or more, `{id}`s to pass as an array in a POST request
 - You can use cURL or Postman to run API
-  - in curl, `-d` means data. For more in what they mean, visit [cURL](https://curl.haxx.se/docs/manpage.html)
 
 ```
 curl -d "data=["25ff984c-e79d-460c-a75f-489e58425656","67a702b9-1787-4c4b-bee2-b391806b803d"]" http://localhost:5000/video/fused
 ```
 
 - You'll receive a `uuid` as a response, which you'll need to make a GET Request
+  - the following `uuid` is invalid, please don't use to retrieve video as it'll give you an error. 
 
 ```
 d080003e-6041-41d6-8981-3236700c81ef
