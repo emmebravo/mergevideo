@@ -1,6 +1,6 @@
 ## Back-End Video Fuse
 
-The instructions for this take home are in [instructions.md](instructions)
+The instructions for this take home are in [instructions.md](instructions.md)
 
 ### Run API Locally
 
