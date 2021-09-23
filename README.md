@@ -1,7 +1,5 @@
 ## Back-End Video Fuse
 
-The [instructions.md](instructions.md)
-
 ### Run API Locally
 
 To run the code:
